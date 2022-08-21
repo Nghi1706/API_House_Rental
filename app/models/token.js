@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import { secretKey } from "../const/const.js";
+import conn from '../connect/db.js'
 const { sign, verify } = jwt
 export const createToken = (phone) => {
     var token = ''
@@ -25,4 +26,9 @@ export const checkToken = (token) => {
         }
         return result
     }
+}
+export const deleteToken = async (token) => {
+    var client = await conn.connect()
+    client.query(`DELETE FROM public.token WHERE "token" = '${token}';`)
+    client.release()
 }
