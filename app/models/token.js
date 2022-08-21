@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
-// import { sign, verify } from "jsonwebtoken";
-import { secretKey } from "./const.js";
+import { secretKey } from "../const/const.js";
 const { sign, verify } = jwt
 export const createToken = (phone) => {
     var token = ''

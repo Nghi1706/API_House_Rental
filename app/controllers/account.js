@@ -1,5 +1,5 @@
 import conn from '../connect/db.js'
-import { createToken, checkToken } from '../const/token.js';
+import { createToken, checkToken } from '../models/token.js';
 export const signin = async (req, res) => {
     try {
         const data = req.body;
